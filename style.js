@@ -43,6 +43,36 @@ faqButtons.forEach(button => {
 });
 
 
+//scroll
+document.addEventListener("DOMContentLoaded", function() {
+  let sections = document.querySelectorAll("section");
+  let navLinks = document.querySelectorAll(".nav-link");
+
+  // Scroll to 'About' on load
+  document.getElementById("learn").scrollIntoView({ behavior: "smooth" });
+
+  window.addEventListener("scroll", () => {
+    let scrollPosition = window.scrollY;
+
+    sections.forEach((sec) => {
+      let offset = sec.offsetTop - 100;
+      let height = sec.offsetHeight;
+      let id = sec.getAttribute("id");
+
+      if (scrollPosition >= offset && scrollPosition < offset + height) {
+        navLinks.forEach((link) => link.classList.remove("text-coral-500", "font-bold"));
+        document.querySelector(`.nav-link[href="#${id}"]`).classList.add("text-coral-500", "font-bold");
+      }
+    });
+  });
+});
+
+
+
+
+
+
+
 
 //Lesson data
 
