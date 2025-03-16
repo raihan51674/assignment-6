@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <title>Show/Hide Toggle</title>
+</head>
+<body class="flex flex-col items-center justify-center bg-gray-100 mx-auto">
+
+  <!-- Login Form -->
+  <div id="loginSection">
+    <section>
+      <div class="flex justify-between w-full pt-15 items-center">
+        <div class="flex flex-col gap-5 w-[55%]">
+          <h1 class="text-5xl font-bold">
+            <span class="text-blue-600">English</span> is Easy!!
+          </h1>
+          <p class="text-[24px] font-medium">
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ।
+          </p>
+          
+          <form class="flex flex-col gap-4 w-[40%]" onsubmit="login(event)">
+            <input type="text" id="username" placeholder="Enter your name"
+              class="px-4 py-2 border border-gray-600 rounded-md hover:border-gray-950" autocomplete="off">
+            <input type="password" id="password" placeholder="123456"
+              class="px-4 py-2 border border-gray-600 rounded-md hover:border-gray-950" autocomplete="off">
+            <div>
+              <button onclick="login(event)"class="px-7 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-800">
+                Get Started
+              </button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <img src="./assets/hero-student.png" alt="bannerImage" class="w-[530px] object-cover">
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-32 p-6">
+      <div class="mt-10 flex flex-col md:flex-row justify-between border-t border-gray-500 pt-5 items-center md:items-start">
+        
+        <!-- Left Section -->
+        <div class="text-center md:text-left">
+          <h2 class="flex items-center gap-2 font-semibold text-[20px]">
+            English <img src="./assets/logo.png" class="w-8 h-8" alt="Logo"> Janala
+          </h2>
+          <p class="font-semibold text-[20px] pt-3">ইংরেজি শিখুন সহজে</p>
+          <p class="font-normal text-[16px] pt-1">Providing ED-Tech Applications since 2025</p>
+        </div>
+    
+        <!-- Right Section -->
+        <div class="mt-5 md:mt-0 text-center">
+          <p class="font-normal text-[14px]">Follow us</p>
+          <div class="flex gap-3 pt-2 justify-center">
+            <a href="#"><img src="./assets/fb-thumb.png" class="w-8 h-8" alt="Facebook"></a>
+            <a href="#"><img src="./assets/instagram-thumb.png" class="w-8 h-8" alt="Instagram"></a>
+            <a href="#"><img src="./assets/youtube-thumb.png" class="w-8 h-8" alt="YouTube"></a>
+          </div>
+        </div>
+    
+      </div>
+    </footer>
+  </div>
+
+  <!-- Main Div (Initially hidden) -->
+  <div id="main" class=" hidden w-full" aria-hidden="true">
+    <header>
+      <nav class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
+        <div class="flex items-center space-x-2">
+          <a href="/" class="text-lg font-semibold flex items-center">
+            English <img src="./assets/logo.png" class="w-9 h-9 object-contain" alt="Logo"> Janala
+          </a>
+        </div>
+      
+        <div class="flex gap-3">
+         
+          <a href="#fag" class="text-blue-600 font-semibold text-sm px-4 py-2 border border-blue-800 rounded-md hover:bg-blue-100 transition"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+          <button onClick="loadCategories()" class="text-blue-600 font-semibold text-sm px-4 py-2 border border-blue-800 rounded-md hover:bg-blue-100 transition">
+            <i class="fa-solid fa-book-open"></i> Learn
+          </button>
+          <button class="text-blue-600 font-semibold text-sm px-4 py-2 border border-blue-800 rounded-md hover:bg-red-100 transition">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </button>
+        </div>
+      </nav>
+    </header>
+  
+    <!-- Main Content -->
+  
+      <section  class=" w-full pt-20 mt-10">
+        <h2 class="mb-12 text-3xl font-semibold text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h2>
+        <div id="category-container" class="flex justify-center py-5 gap-5">
+    
+  
+        </div>
+  
+        <div id="video-container">
+  
+        </div>
+        
+      </section>
+  
+  
+      <section id="faq" class=" w-full pt-20 mt-10">
+        <h2 class="mb-12 text-3xl font-semibold text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h2>
+    
+        <div class="flex flex-col gap-3 items-start pb-5">
+          <!-- FAQ Item 1 -->
+          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+            <button class="relative w-full  py-2 font-semibold text-lg">
+                <span class="p-2 flex justify-start">1. How can I start learning English on this website?</span>
+                <span class="absolute top-2 text-3xl right-0">+</span>
+            </button>
+            <div class="hidden p-2 text-start text-[#62748E]">
+              <p>Start by exploring the vocabulary lessons and practicing with word cards.</p>
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+            <button class="relative w-full  py-2 font-semibold text-lg">
+                <span class="p-2 flex justify-start">2. Is this website free to use?</span>
+                <span class="absolute top-2 text-3xl right-0">+</span>
+            </button>
+            <div class="hidden p-2 text-start text-[#62748E]">
+              <p>It depends on the website, some features may be free.</p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+            <button class="relative w-full  py-2 font-semibold text-lg">
+                <span class="p-2 flex justify-start">3. Do I need to create an account?</span>
+                <span class="absolute top-2 text-3xl right-0">+</span>
+            </button>
+            <div class="hidden p-2 text-start text-[#62748E]">
+              <p>You need to create an account to access certain features</p>
+            </div>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+            <button class="relative w-full  py-2 font-semibold text-lg">
+                <span class="p-2 flex justify-start">4. How can I build my English vocabulary?</span>
+                <span class="absolute top-2 text-3xl right-0">+</span>
+            </button>
+            <div class="hidden p-2 text-start text-[#62748E]">
+              <p>You can build your vocabulary by reading, using flashcards, and practicing new words daily</p>
+            </div>
+          </div>
+    
+          <!-- FAQ Item 5 -->
+          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+            <button class="relative w-full  py-2 font-semibold text-lg">
+                <span class="p-2 flex justify-start">5. Do you offer certificates for completed courses?</span>
+                <span class="absolute top-2 text-3xl right-0">+</span>
+            </button>
+            <div class="hidden p-2 text-start text-[#62748E]">
+              <p>It depends on the platform, some offer certificates for completed courses</p>
+            </div>
+          </div>
+  
+  
+  
+       
+        </div>
+      </section>
+  </div>
+   
+  <!-- Toggle Button -->
+  <!-- <button id="toggleBtn" class="btn btn-primary mt-4 hidden" onclick="hideShow()">Hide</button> -->
+
+  <!-- JavaScript -->
+
+ <script src="style.js"></script>
+
+</body>
+</html>
