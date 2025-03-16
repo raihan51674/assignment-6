@@ -73,7 +73,7 @@
   <!-- Main Div (Initially hidden) -->
   <div id="main" class=" hidden w-full" aria-hidden="true">
     <header>
-      <nav class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
+      <nav class="flex justify-between w-full bg-white p-4 rounded-lg shadow-md fixed">
         <div class="flex items-center space-x-2">
           <a href="/" class="text-lg font-semibold flex items-center">
             English <img src="./assets/logo.png" class="w-9 h-9 object-contain" alt="Logo"> Janala
@@ -95,26 +95,33 @@
   
     <!-- Main Content -->
   
-      <section id="learn" class=" w-full pt-20 mt-10">
-        <h2 class="mb-12 text-3xl font-semibold text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h2>
-        <div id="category-container" class="flex justify-center py-5 gap-5">
-    
-        </div>
+    <div class="flex flex-col gap-y-8"> <!-- Added vertical gap -->
+      <section id="learn" class="w-full pt-24 pb-24 h-[500px]"> <!-- Adjusted top and bottom padding -->
+        <h2 class="mb-12 text-3xl font-semibold text-center">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h2>
+        <div id="category-container" class="flex justify-center py-5 gap-5"></div>
   
-        <div id="video-container">
+       
   
-        </div>
+        <div id="video-container"></div>
+      </section>
+      <section id="lesson-container" class="w-11/12 mx-auto grid grid-cols-3 overflow-scroll gap-4 h-[1000px] ">
         
+     
+        
+
       </section>
   
+      <section id="faq" class="w-full pt-24 pb-24 h-[500px]"> <!-- Adjusted top and bottom padding -->
+        <h2 class="mb-12 text-3xl font-semibold text-center">
+          <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+        </h2>
   
-      <section id="faq" class=" w-full pt-20 mt-10">
-        <h2 class="mb-12 text-3xl font-semibold text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h2>
-    
         <div class="flex flex-col gap-3 items-start pb-5">
           <!-- FAQ Item 1 -->
           <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full  py-2 font-semibold text-lg">
+            <button class="relative w-full py-2 font-semibold text-lg">
                 <span class="p-2 flex justify-start">1. How can I start learning English on this website?</span>
                 <span class="absolute top-2 text-3xl right-0">+</span>
             </button>
@@ -122,9 +129,10 @@
               <p>Start by exploring the vocabulary lessons and practicing with word cards.</p>
             </div>
           </div>
+  
           <!-- FAQ Item 2 -->
           <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full  py-2 font-semibold text-lg">
+            <button class="relative w-full py-2 font-semibold text-lg">
                 <span class="p-2 flex justify-start">2. Is this website free to use?</span>
                 <span class="absolute top-2 text-3xl right-0">+</span>
             </button>
@@ -132,43 +140,43 @@
               <p>It depends on the website, some features may be free.</p>
             </div>
           </div>
+  
           <!-- FAQ Item 3 -->
           <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full  py-2 font-semibold text-lg">
+            <button class="relative w-full py-2 font-semibold text-lg">
                 <span class="p-2 flex justify-start">3. Do I need to create an account?</span>
                 <span class="absolute top-2 text-3xl right-0">+</span>
             </button>
             <div class="hidden p-2 text-start text-[#62748E]">
-              <p>You need to create an account to access certain features</p>
+              <p>You need to create an account to access certain features.</p>
             </div>
           </div>
+  
           <!-- FAQ Item 4 -->
           <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full  py-2 font-semibold text-lg">
+            <button class="relative w-full py-2 font-semibold text-lg">
                 <span class="p-2 flex justify-start">4. How can I build my English vocabulary?</span>
                 <span class="absolute top-2 text-3xl right-0">+</span>
             </button>
             <div class="hidden p-2 text-start text-[#62748E]">
-              <p>You can build your vocabulary by reading, using flashcards, and practicing new words daily</p>
+              <p>You can build your vocabulary by reading, using flashcards, and practicing new words daily.</p>
             </div>
           </div>
-    
+  
           <!-- FAQ Item 5 -->
           <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full  py-2 font-semibold text-lg">
+            <button class="relative w-full py-2 font-semibold text-lg">
                 <span class="p-2 flex justify-start">5. Do you offer certificates for completed courses?</span>
                 <span class="absolute top-2 text-3xl right-0">+</span>
             </button>
             <div class="hidden p-2 text-start text-[#62748E]">
-              <p>It depends on the platform, some offer certificates for completed courses</p>
+              <p>It depends on the platform, some offer certificates for completed courses.</p>
             </div>
           </div>
-  
-  
-  
-       
         </div>
       </section>
+  </div>
+  
   </div>
    
   <!-- Toggle Button -->

@@ -118,6 +118,17 @@ const loadCategories = () => {
 
 };
 
+const loadCategoryLesson=(level_no)=>{
+  
+  const url =`https://openapi.programming-hero.com/api/level/${level_no}`
+  console.log(url);
+  fetch(url)
+  .then((res)=>res.json())
+  .then((dt)=> displayLesson(dt.data)
+  )
+  
+}
+
 const DisplyCategory = (data) => {
   const categoryContainer = document.getElementById("category-container");
   categoryContainer.innerHTML = ""; // Clear previous categories
@@ -125,8 +136,8 @@ const DisplyCategory = (data) => {
   for (let lesson of data) {
     const categoryDiv = document.createElement("div");
     categoryDiv.innerHTML = `
-            <button id="btn-${lesson.category_id}" 
-                onClick="loadCategoryVideo(${lesson.category_id})"
+            <button  
+                onClick="loadCategoryLesson(${lesson.level_no})"
                 class="btn px-3 bg-slate-400 text-black hover:btn-primary text-xl hover:text-white font-semibold border-none">
                 ${lesson.lessonName}
             </button>`
@@ -134,6 +145,71 @@ const DisplyCategory = (data) => {
     categoryContainer.append(categoryDiv);
   }
 };
+loadCategories()
+
+
+//card load
+
+function loadLesson(){
+  fetch("https://openapi.programming-hero.com/api/words/all")
+  .then((res)=>res.json())
+  .then((dt)=>{
+    displayLesson(dt.data);
+    
+  })
+}
+
+const displayLesson=(data)=>{
+  // console.log(data);
+  
+  const videoContainer =document.getElementById("lesson-container")
+
+  videoContainer.innerHTML=""
+
+   if(data.length==0){
+    videoContainer.innerHTML=`
+       
+     <div class="py-20 col-span-full flex flex-col justify-center items-center text-center">
+       <img src="./assets/alert-error.png" alt="">
+       <h2 class="text-2xl font-bold">Ooh Sorry ! there is no content here</h2>
+    </div>
+    
+    `
+
+
+    return
+   }
+
+
+
+
+  data.forEach((lesson)=>{
+    console.log(lesson);
+    const lessonCard = document.createElement('div')
+    lessonCard.innerHTML=`
+    
+
+          <div class=" bg-white text-black flex flex-col items-center text-center rounded-md">
+          <div class=" px-3 py-7 flex flex-col gap-5">
+            <h2 class=" font-bold text-[32px]">${lesson.word}</h2>
+            <p class="font-medium text-[20px]">Meaning / Pronunciation</p>
+            <h2 class=" font-semibold text-[32px] object-cover">"${lesson.meaning}/${lesson.pronunciation}"</h2>
+            <div class="pt-8 flex justify-between">
+              <button class="btn px-3 py-3 border-none bg-gray-300"><img class="w-[30px] h-[30px] " src="https://img.icons8.com/?size=48&id=BzHWSXaTEkEv&format=png" alt=""></button>
+              <button class="btn px-3 py-3 border-none bg-gray-300"><img class="w-[30px] h-[30px] " src="https://img.icons8.com/?size=100&id=41563&format=png" alt=""></button>
+            </div>
+          </div>
+        </div>
+    
+    `
+    videoContainer.append(lessonCard)
+  })
+
+}
+loadLesson()
+
+
+
 
 
 
