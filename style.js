@@ -1,7 +1,7 @@
 //Login
 
 const mainDiv = document.getElementById("main");
-// const toggleBtn = document.getElementById("toggleBtn");
+
 const loginSection = document.getElementById("loginSection");
 
 function login(event) {
@@ -9,14 +9,13 @@ function login(event) {
   let name = document.getElementById("username").value.trim();
   let pass = document.getElementById("password").value.trim();
 
-  // Simple login validation
+  
   if (pass === "123456") {
-    // Hide the login section and show the main div
+    
     loginSection.classList.add("hidden");
     mainDiv.classList.remove("hidden");
-    // toggleBtn.classList.remove("hidden");
-    // toggleBtn.textContent = "Hide"; // Button text for hiding the div
-    mainDiv.setAttribute("aria-hidden", "false"); // Update accessibility
+    
+    mainDiv.setAttribute("aria-hidden", "false"); 
   } else {
     alert("Password is incorrect. Type: '123456'");
   }
@@ -43,6 +42,9 @@ faqButtons.forEach(button => {
 });
 
 
+
+
+
 //scroll
 document.addEventListener("DOMContentLoaded", function() {
   let sections = document.querySelectorAll("section");
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let scrollPosition = window.scrollY;
 
     sections.forEach((sec) => {
-      let offset = sec.offsetTop - 100;
+      let offset = sec.offsetTop - 50;
       let height = sec.offsetHeight;
       let id = sec.getAttribute("id");
 
@@ -118,13 +120,33 @@ const loadCategories = () => {
 
 };
 
+   document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("no-data-message").classList.remove("hidden");
+  document.getElementById("lesson-container").classList.add("hidden");
+  });
+
 const loadCategoryLesson=(level_no)=>{
   
   const url =`https://openapi.programming-hero.com/api/level/${level_no}`
   console.log(url);
   fetch(url)
   .then((res)=>res.json())
-  .then((dt)=> displayLesson(dt.data)
+  .then((dt)=> {
+   
+
+    
+
+
+
+
+  
+
+    
+    document.getElementById("no-data-message").classList.add("hidden");
+    document.getElementById("lesson-container").classList.remove("hidden");
+    displayLesson(dt.data)
+
+  }
   )
   
 }
@@ -136,7 +158,7 @@ const DisplyCategory = (data) => {
   for (let lesson of data) {
     const categoryDiv = document.createElement("div");
     categoryDiv.innerHTML = `
-            <button  
+            <button id="btn-${lesson.level_no}" 
                 onClick="loadCategoryLesson(${lesson.level_no})"
                 class="btn px-3 bg-slate-400 text-black hover:btn-primary text-xl hover:text-white font-semibold border-none">
                 ${lesson.lessonName}

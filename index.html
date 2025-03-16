@@ -10,13 +10,17 @@
     html {
       scroll-behavior: smooth;
     }
+    .active{
+      background: red;
+      color: white;
+    }
   </style>
 </head>
 <body class="flex flex-col items-center justify-center bg-gray-100 mx-auto">
 
   <!-- Login Form -->
   <div id="loginSection">
-    <section>
+    <section class=" p-8">
       <div class="flex justify-between w-full pt-15 items-center">
         <div class="flex flex-col gap-5 w-[55%]">
           <h1 class="text-5xl font-bold">
@@ -39,7 +43,7 @@
           </form>
         </div>
         <div>
-          <img src="./assets/hero-student.png" alt="bannerImage" class="w-[530px] object-cover">
+          <img src="./assets/hero-student.png" alt="bannerImage" class="w-[630px] object-cover">
         </div>
       </div>
     </section>
@@ -72,48 +76,64 @@
 
   <!-- Main Div (Initially hidden) -->
   <div id="main" class=" hidden w-full" aria-hidden="true">
-    <header>
-      <nav class="flex justify-between w-full bg-white p-4 rounded-lg shadow-md fixed">
-        <div class="flex items-center space-x-2">
-          <a href="/" class="text-lg font-semibold flex items-center">
-            English <img src="./assets/logo.png" class="w-9 h-9 object-contain" alt="Logo"> Janala
-          </a>
-        </div>
-      
-        <div class="flex gap-3">
-         
-          <button class="nav-link text-blue-600 font-semibold text-sm px-4 py-2 border border-blue-800 rounded-md hover:bg-blue-100 transition"><a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a></button>
-          <button onClick="loadCategories()" class="nav-link text-blue-600 font-semibold text-sm px-4 py-2 border border-blue-800 rounded-md hover:bg-blue-100 transition">
-            <a href="#learn"><i class="fa-solid fa-book-open"></i> Learn</a>
-          </button>
-          <button class="text-blue-600 font-semibold text-sm px-4 py-2 border border-blue-800 rounded-md hover:bg-red-100 transition">
-            <i class="fa-solid fa-right-from-bracket"></i> Logout
-          </button>
-        </div>
-      </nav>
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <div class="mx-auto flex justify-between items-center p-4">
+            <h2 class="text-[20px] font-semibold flex items-center">English <img src="./assets/logo.png" class="w-9 h-9 object-contain" alt="Logo">জানালা</h2>
+        <nav class="flex space-x-6">
+          <a href="#faq" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500
+           text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i class="fa-solid fa-circle-question"></i>FAQ</a>
+          <a href="#learn" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500
+          text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i class="fa-solid fa-book-open"></i> Learn</a>
+          <a href="#service" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500
+          text-[#422AD5] hover:bg-[#422AD5] hover:text-white"> <i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+          
+        </nav>
+      </div>
     </header>
+
+   
   
     <!-- Main Content -->
-  
-    <div class="flex flex-col gap-y-8"> <!-- Added vertical gap -->
-      <section id="learn" class="w-full pt-24 pb-24 h-[500px]"> <!-- Adjusted top and bottom padding -->
-        <h2 class="mb-12 text-3xl font-semibold text-center">
-          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
-        </h2>
-        <div id="category-container" class="flex justify-center py-5 gap-5"></div>
-  
-       
-  
-        <div id="video-container"></div>
-      </section>
-      <section id="lesson-container" class="w-11/12 mx-auto grid grid-cols-3 overflow-scroll gap-4 h-[1000px] ">
-        
-     
-        
+    <div id="learn" class="block mt-40 ">
+      <h2 class="mb-12 text-[36px] font-bold text-center pt-16">
+        <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+      </h2>
 
+      <div id="category-container" class="flex justify-center py-5 gap-5"> 
+      </div>
+
+      <div id="no-data-message">
+        <h2 class="text-4xl text-center mt-15 mb-18">No data select to you</h2>
+      </div>
+
+
+      <section id="lesson-container" class="hidden w-11/12 mx-auto grid grid-cols-3 overflow-scroll gap-4 h-[600px]">
       </section>
+    </div>
+
+
+
+
+    
+    <div class="flex flex-col gap-y-8"> 
+     
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <section id="lesson-container" class=" w-11/12 mx-auto grid grid-cols-3 overflow-scroll gap-4 h-[600px] ">
+      </section> -->
   
       <section id="faq" class="w-full pt-24 pb-24 h-[500px]"> <!-- Adjusted top and bottom padding -->
+
+
         <h2 class="mb-12 text-3xl font-semibold text-center">
           <span class="text-[#00BCFF]">Frequently</span> Asked Questions
         </h2>
