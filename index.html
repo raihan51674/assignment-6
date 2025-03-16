@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/0019246598.js" crossorigin="anonymous"></script>
   <title>English</title>
   <style>
     html {
       scroll-behavior: smooth;
     }
-    .active{
-      background: red;
-      color: white;
-    }
+    .active {
+    background: #422AD5 !important;
+    color: white !important;
+}
   </style>
 </head>
-<body class="flex flex-col items-center justify-center bg-gray-100 mx-auto">
+<body class="flex flex-col items-center justify-center bg-gray-100 mx-auto max-w-screen-xl">
 
   <!-- Login Form -->
   <div id="loginSection">
@@ -30,13 +31,13 @@
             আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ।
           </p>
           
-          <form class="flex flex-col gap-4 w-[40%]" onsubmit="login(event)">
+          <form class="flex flex-col  gap-4 w-[40%]" onsubmit="login(event)">
             <input type="text" id="username" placeholder="Enter your name"
-              class="px-4 py-2 border border-gray-600 rounded-md hover:border-gray-950" autocomplete="off">
-            <input type="password" id="password" placeholder="123456"
-              class="px-4 py-2 border border-gray-600 rounded-md hover:border-gray-950" autocomplete="off">
+              class="px-4 text-lg py-2 border border-gray-600 rounded-md hover:border-gray-950" autocomplete="off">
+            <input  type="password" id="password" placeholder="123456"
+              class="px-4 text-lg py-2 border border-gray-600 rounded-md hover:border-gray-950" autocomplete="off">
             <div>
-              <button onclick="login(event)"class="px-7 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-800">
+              <button onclick="login(event)"class="px-7 text-[18px] py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-800">
                 Get Started
               </button>
             </div>
@@ -75,9 +76,9 @@
   </div>
 
   <!-- Main Div (Initially hidden) -->
-  <div id="main" class=" hidden w-full" aria-hidden="true">
-    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div class="mx-auto flex justify-between items-center p-4">
+  <div id="main" class=" hidden " aria-hidden="true">
+    <header class="fixed top-0 mx-auto max-w-screen-xl bg-white shadow-md flex justify-between ">
+      <div class=" flex justify-between items-center p-4">
             <h2 class="text-[20px] font-semibold flex items-center">English <img src="./assets/logo.png" class="w-9 h-9 object-contain" alt="Logo">জানালা</h2>
         <nav class="flex space-x-6">
           <a href="#faq" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500
@@ -102,36 +103,27 @@
       <div id="category-container" class="flex justify-center py-5 gap-5"> 
       </div>
 
-      <div id="no-data-message">
-        <h2 class="text-4xl text-center mt-15 mb-18">No data select to you</h2>
+      <div id="no-data-message" class="bg-gray-200 items-center justify-center flex flex-col gap-5 w-full h-[300px]">
+        <p class="font-medium text-[17px] text-[#79716B] text-center">আপনি এখনো কোন Lesson Select করেন</p>
+        <h2 class="text-4xl text-center mt-15 mb-18">একটি Lesson Select করুন।</h2>
       </div>
+
+
+
+
+
+
+
+
+
+      
 
 
       <section id="lesson-container" class="hidden w-11/12 mx-auto grid grid-cols-3 overflow-scroll gap-4 h-[600px]">
       </section>
-    </div>
 
 
-
-
-    
-    <div class="flex flex-col gap-y-8"> 
-     
-
-
-
-
-
-
-
-
-
-
-
-      <!-- <section id="lesson-container" class=" w-11/12 mx-auto grid grid-cols-3 overflow-scroll gap-4 h-[600px] ">
-      </section> -->
-  
-      <section id="faq" class="w-full pt-24 pb-24 h-[500px]"> <!-- Adjusted top and bottom padding -->
+      <section id="faq" class="w-full pt-48 h-[500px]"> <!-- Adjusted top and bottom padding -->
 
 
         <h2 class="mb-12 text-3xl font-semibold text-center">
@@ -195,7 +187,58 @@
           </div>
         </div>
       </section>
-  </div>
+
+      <footer class="mt-48 p-6">
+        <div class="mt-10 flex flex-col md:flex-row justify-between border-t border-gray-500 pt-5 items-center md:items-start">
+          
+          <!-- Left Section -->
+          <div class="text-center md:text-left">
+            <h2 class="flex items-center gap-2 font-semibold text-[20px]">
+              English <img src="./assets/logo.png" class="w-8 h-8" alt="Logo"> Janala
+            </h2>
+            <p class="font-semibold text-[20px] pt-3">ইংরেজি শিখুন সহজে</p>
+            <p class="font-normal text-[16px] pt-1">Providing ED-Tech Applications since 2025</p>
+          </div>
+      
+          <!-- Right Section -->
+          <div class="mt-5 md:mt-0 text-center">
+            <p class="font-normal text-[14px]">Follow us</p>
+            <div class="flex gap-3 pt-2 justify-center">
+              <a href="#"><img src="./assets/fb-thumb.png" class="w-8 h-8" alt="Facebook"></a>
+              <a href="#"><img src="./assets/instagram-thumb.png" class="w-8 h-8" alt="Instagram"></a>
+              <a href="#"><img src="./assets/youtube-thumb.png" class="w-8 h-8" alt="YouTube"></a>
+            </div>
+          </div>
+      
+        </div>
+      </footer>
+      
+
+        <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="lesson_details" class="modal">
+      <div class="modal-box">
+        <div id="details-container">
+         
+        </div>
+        <div class="modal-action">
+          <form method="dialog" class="flex items-start justify-start">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class=" btn px-4 py-2 text-[24px] font-medium bg-[#422AD5] text-white">Complete Learning</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+       
+    
+
+
+    </div>
+
+
+
+
+    
+   
   
   </div>
    
