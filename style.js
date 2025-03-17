@@ -248,9 +248,10 @@ const displayLesson=(data)=>{
    if(data.length==0){
     videoContainer.innerHTML=`
        
-     <div class="py-20 col-span-full flex flex-col justify-center items-center text-center">
+     <div class="py-5 bg-[#F8F8F8] col-span-full flex flex-col gap-5 justify-center items-center text-center">
        <img src="./assets/alert-error.png" alt="">
-       <h2 class="text-2xl font-bold">Ooh Sorry ! there is no content here</h2>
+       <p class="text-[#79716B]">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+       <h2 class="text-3xl font-bold">নেক্সট Lesson এ যান</h2>
     </div>
     
     `
