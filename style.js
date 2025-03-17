@@ -1,4 +1,17 @@
-//Login
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //login section
 
 const mainDiv = document.getElementById("main");
 
@@ -45,12 +58,10 @@ faqButtons.forEach(button => {
 
 
 
-//scroll
+//scroll section
 document.addEventListener("DOMContentLoaded", function() {
   let sections = document.querySelectorAll("section");
   let navLinks = document.querySelectorAll(".nav-link");
-
-  // Scroll to 'About' on load
   document.getElementById("learn").scrollIntoView({ behavior: "smooth" });
 
   window.addEventListener("scroll", () => {
@@ -76,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-//Lesson data
+//Lesson all data show
 
 const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/levels/all")
@@ -85,27 +96,27 @@ const loadCategories = () => {
       console.log(dt);
 
       if (dt?.data) {
-        // Modify lesson names before displaying
+        
         const updatedData = dt.data.map((lesson) => {
           if (lesson.id === 101) {
-            lesson.lessonName = "Lesson-1"; // Rename Level 6
+            lesson.lessonName = "Lesson-1"; 
           } else if (lesson.id === 102) {
-            lesson.lessonName = "Lesson-2"; // Rename Level 7
+            lesson.lessonName = "Lesson-2"; 
           }
           else if (lesson.id === 103) {
-            lesson.lessonName = "Lesson-3"; // Rename Level 7
+            lesson.lessonName = "Lesson-3"; 
           }
           else if (lesson.id === 104) {
-            lesson.lessonName = "Lesson-4"; // Rename Level 7
+            lesson.lessonName = "Lesson-4"; 
           }
           else if (lesson.id === 105) {
-            lesson.lessonName = "Lesson-5"; // Rename Level 7
+            lesson.lessonName = "Lesson-5"; 
           }
           else if (lesson.id === 106) {
-            lesson.lessonName = "Lesson-6"; // Rename Level 7
+            lesson.lessonName = "Lesson-6"; 
           }
           else if (lesson.id === 107) {
-            lesson.lessonName = "Lesson-7"; // Rename Level 7
+            lesson.lessonName = "Lesson-7"; 
           }
           return lesson;
         });
@@ -114,7 +125,7 @@ const loadCategories = () => {
 
         DisplyCategory(updatedData);
       }
-      // Debugging: Check API response
+      
 
     })
 
@@ -126,6 +137,8 @@ const loadCategories = () => {
   document.getElementById("no-data-message").classList.remove("hidden");
   document.getElementById("lesson-container").classList.add("hidden");
   });
+
+  //load all lesson category
 
 const loadCategoryLesson=(level_no)=>{
   
@@ -153,6 +166,8 @@ const loadCategoryLesson=(level_no)=>{
   )
   
 }
+
+//lesson details popup
 
 const loadLessonDetails=(lessonId)=>{
   const url =`https://openapi.programming-hero.com/api/word/${lessonId}`
@@ -191,6 +206,8 @@ const DisplayLessonDetails=(lesson)=>{
 
 }
 
+
+//display all button
 const DisplyCategory = (data) => {
   const categoryContainer = document.getElementById("category-container");
   categoryContainer.innerHTML = ""; // Clear previous categories
@@ -200,7 +217,7 @@ const DisplyCategory = (data) => {
     categoryDiv.innerHTML = `
             <button id="btn-${lesson.level_no}" 
                 onClick="loadCategoryLesson(${lesson.level_no})"
-                class="py-2 rounded-md px-5 border-2 border-indigo-500/100 text-[#422AD5] hover:bg-[#422AD5] text-[26px] hover:text-white font-semibold"><i class="fa-solid fa-book-open"></i>
+                class=" rounded-md pl-3 border-2 border-indigo-500/100 text-[#422AD5] hover:bg-[#422AD5] text-[18px] hover:text-white items-center flex"><i class="fa-solid fa-book-open"></i>
                 ${lesson.lessonName}
             </button>`
         ;
@@ -210,7 +227,7 @@ const DisplyCategory = (data) => {
 loadCategories()
 
 
-//card load
+// all card load
 
 function loadLesson(){
   fetch("https://openapi.programming-hero.com/api/words/all")

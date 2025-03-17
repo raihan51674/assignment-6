@@ -17,81 +17,75 @@
 }
   </style>
 </head>
-<body class="flex flex-col items-center justify-center bg-gray-100 mx-auto max-w-screen-xl">
+<body class="flex flex-col items-center justify-center mx-auto max-w-screen-xl">
 
   <!-- Login Form -->
-  <div id="loginSection">
-    <section class=" p-8">
-      <div class="flex justify-between w-full pt-15 items-center">
-        <div class="flex flex-col gap-5 w-[55%]">
+  <div id="loginSection" class="w-full">
+    <section class="min-h-screen flex items-center justify-center py-16">
+      <div class="flex justify-between items-center w-11/12 max-w-6xl mx-auto">
+        <!-- Left Side (Text and Form) -->
+        <div class="flex flex-col gap-5 w-[50%]">
           <h1 class="text-5xl font-bold">
             <span class="text-blue-600">English</span> is Easy!!
           </h1>
           <p class="text-[24px] font-medium">
             আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ।
           </p>
-          
-          <form class="flex flex-col  gap-4 w-[40%]" onsubmit="login(event)">
+  
+          <form class="flex flex-col gap-4 w-[40%]" onsubmit="login(event)">
             <input type="text" id="username" placeholder="Enter your name"
-              class="px-4 text-lg py-2 border border-gray-600 rounded-md hover:border-gray-950" autocomplete="off">
-            <input  type="password" id="password" placeholder="123456"
-              class="px-4 text-lg py-2 border border-gray-600 rounded-md hover:border-gray-950" autocomplete="off">
+              class="px-4 text-lg py-2 border border-gray-600 rounded-md hover:border-gray-950 focus:outline-none focus:ring-2 focus:ring-blue-600" autocomplete="off">
+            <input type="password" id="password" placeholder="123456"
+              class="px-4 text-lg py-2 border border-gray-600 rounded-md hover:border-gray-950 focus:outline-none focus:ring-2 focus:ring-blue-600" autocomplete="off">
             <div>
-              <button onclick="login(event)"class="px-7 text-[18px] py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-800">
+              <button type="submit" class="px-7 text-[18px] py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-800">
                 Get Started
               </button>
             </div>
           </form>
         </div>
-        <div>
-          <img src="./assets/hero-student.png" alt="bannerImage" class="w-[630px] object-cover">
+  
+        <!-- Right Side (Image) -->
+        <div class="w-[40%]">
+          <img src="./assets/hero-student.png" alt="bannerImage" class="w-full object-cover rounded-lg">
         </div>
       </div>
     </section>
-
-    <footer class="mt-32 p-6">
-      <div class="mt-10 flex flex-col md:flex-row justify-between border-t border-gray-500 pt-5 items-center md:items-start">
-        
-        <!-- Left Section -->
-        <div class="text-center md:text-left">
-          <h2 class="flex items-center gap-2 font-semibold text-[20px]">
-            English <img src="./assets/logo.png" class="w-8 h-8" alt="Logo"> Janala
-          </h2>
-          <p class="font-semibold text-[20px] pt-3">ইংরেজি শিখুন সহজে</p>
-          <p class="font-normal text-[16px] pt-1">Providing ED-Tech Applications since 2025</p>
-        </div>
-    
-        <!-- Right Section -->
-        <div class="mt-5 md:mt-0 text-center">
-          <p class="font-normal text-[14px]">Follow us</p>
-          <div class="flex gap-3 pt-2 justify-center">
-            <a href="#"><img src="./assets/fb-thumb.png" class="w-8 h-8" alt="Facebook"></a>
-            <a href="#"><img src="./assets/instagram-thumb.png" class="w-8 h-8" alt="Instagram"></a>
-            <a href="#"><img src="./assets/youtube-thumb.png" class="w-8 h-8" alt="YouTube"></a>
-          </div>
-        </div>
-    
-      </div>
-    </footer>
   </div>
+  
+
+
+
+
 
   <!-- Main Div (Initially hidden) -->
-  <div id="main" class=" hidden " aria-hidden="true">
-    <header class="fixed top-0 mx-auto max-w-screen-xl bg-white shadow-md flex justify-between ">
-      <div class=" flex justify-between items-center p-4">
-            <h2 class="text-[20px] font-semibold flex items-center">English <img src="./assets/logo.png" class="w-9 h-9 object-contain" alt="Logo">জানালা</h2>
-        <nav class="flex space-x-6">
-          <a href="#faq" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500
-           text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i class="fa-solid fa-circle-question"></i>FAQ</a>
-          <a href="#learn" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500
-          text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i class="fa-solid fa-book-open"></i> Learn</a>
-          <a href="#service" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500
-          text-[#422AD5] hover:bg-[#422AD5] hover:text-white"> <i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-          
-        </nav>
+  <div id="main" class=" hidden w-full" aria-hidden="true">
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 p-4 ">
+      <div class="flex justify-between items-center">
+        <!-- Left Side -->
+        <div>
+          <h2 class="text-[20px] font-semibold flex items-center">
+            English 
+            <img src="./assets/logo.png" class="w-9 h-9 object-contain ml-2" alt="Logo">
+            জানালা
+          </h2>
+        </div>
+    
+        <!-- Right Side -->
+        <div class="flex space-x-4">
+          <a href="#faq" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500 text-[#422AD5] hover:bg-[#422AD5] hover:text-white">
+            <i class="fa-solid fa-circle-question"></i> FAQ
+          </a>
+          <a href="#learn" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500 text-[#422AD5] hover:bg-[#422AD5] hover:text-white">
+            <i class="fa-solid fa-book-open"></i> Learn
+          </a>
+          <a href="#service" class="nav-link text-2xl font-semibold rounded-md px-5 py-1 border border-indigo-500 text-[#422AD5] hover:bg-[#422AD5] hover:text-white">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </a>
+        </div>
       </div>
-    </header>
-
+    </nav>
+    
    
   
     <!-- Main Content -->
@@ -108,131 +102,87 @@
         <h2 class="text-4xl text-center mt-15 mb-18">একটি Lesson Select করুন।</h2>
       </div>
 
-
-
-
-
-
-
-
-
-      
-
-
       <section id="lesson-container" class="hidden w-11/12 mx-auto grid grid-cols-3 overflow-scroll gap-4 h-[600px]">
       </section>
-
-
-      <section id="faq" class="w-full pt-48 h-[500px]"> <!-- Adjusted top and bottom padding -->
-
-
-        <h2 class="mb-12 text-3xl font-semibold text-center">
-          <span class="text-[#00BCFF]">Frequently</span> Asked Questions
-        </h2>
-  
-        <div class="flex flex-col gap-3 items-start pb-5">
-          <!-- FAQ Item 1 -->
-          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full py-2 font-semibold text-lg">
-                <span class="p-2 flex justify-start">1. How can I start learning English on this website?</span>
-                <span class="absolute top-2 text-3xl right-0">+</span>
-            </button>
-            <div class="hidden p-2 text-start text-[#62748E]">
-              <p>Start by exploring the vocabulary lessons and practicing with word cards.</p>
-            </div>
-          </div>
-  
-          <!-- FAQ Item 2 -->
-          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full py-2 font-semibold text-lg">
-                <span class="p-2 flex justify-start">2. Is this website free to use?</span>
-                <span class="absolute top-2 text-3xl right-0">+</span>
-            </button>
-            <div class="hidden p-2 text-start text-[#62748E]">
-              <p>It depends on the website, some features may be free.</p>
-            </div>
-          </div>
-  
-          <!-- FAQ Item 3 -->
-          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full py-2 font-semibold text-lg">
-                <span class="p-2 flex justify-start">3. Do I need to create an account?</span>
-                <span class="absolute top-2 text-3xl right-0">+</span>
-            </button>
-            <div class="hidden p-2 text-start text-[#62748E]">
-              <p>You need to create an account to access certain features.</p>
-            </div>
-          </div>
-  
-          <!-- FAQ Item 4 -->
-          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full py-2 font-semibold text-lg">
-                <span class="p-2 flex justify-start">4. How can I build my English vocabulary?</span>
-                <span class="absolute top-2 text-3xl right-0">+</span>
-            </button>
-            <div class="hidden p-2 text-start text-[#62748E]">
-              <p>You can build your vocabulary by reading, using flashcards, and practicing new words daily.</p>
-            </div>
-          </div>
-  
-          <!-- FAQ Item 5 -->
-          <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
-            <button class="relative w-full py-2 font-semibold text-lg">
-                <span class="p-2 flex justify-start">5. Do you offer certificates for completed courses?</span>
-                <span class="absolute top-2 text-3xl right-0">+</span>
-            </button>
-            <div class="hidden p-2 text-start text-[#62748E]">
-              <p>It depends on the platform, some offer certificates for completed courses.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="mt-48 p-6">
-        <div class="mt-10 flex flex-col md:flex-row justify-between border-t border-gray-500 pt-5 items-center md:items-start">
-          
-          <!-- Left Section -->
-          <div class="text-center md:text-left">
-            <h2 class="flex items-center gap-2 font-semibold text-[20px]">
-              English <img src="./assets/logo.png" class="w-8 h-8" alt="Logo"> Janala
-            </h2>
-            <p class="font-semibold text-[20px] pt-3">ইংরেজি শিখুন সহজে</p>
-            <p class="font-normal text-[16px] pt-1">Providing ED-Tech Applications since 2025</p>
-          </div>
-      
-          <!-- Right Section -->
-          <div class="mt-5 md:mt-0 text-center">
-            <p class="font-normal text-[14px]">Follow us</p>
-            <div class="flex gap-3 pt-2 justify-center">
-              <a href="#"><img src="./assets/fb-thumb.png" class="w-8 h-8" alt="Facebook"></a>
-              <a href="#"><img src="./assets/instagram-thumb.png" class="w-8 h-8" alt="Instagram"></a>
-              <a href="#"><img src="./assets/youtube-thumb.png" class="w-8 h-8" alt="YouTube"></a>
-            </div>
-          </div>
-      
-        </div>
-      </footer>
-      
-
-        <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
-    <dialog id="lesson_details" class="modal">
+     <dialog id="lesson_details" class="modal">
       <div class="modal-box">
         <div id="details-container">
          
         </div>
         <div class="modal-action">
           <form method="dialog" class="flex items-start justify-start">
-            <!-- if there is a button in form, it will close the modal -->
             <button class=" btn px-4 py-2 text-[24px] font-medium bg-[#422AD5] text-white">Complete Learning</button>
           </form>
         </div>
       </div>
     </dialog>
        
-    
-
-
     </div>
+
+    <section id="faq" class="w-full pt-48 h-[500px]"> 
+
+
+      <h2 class="mb-12 text-3xl font-semibold text-center">
+        <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+      </h2>
+
+      <div class="flex flex-col gap-3 items-start pb-5">
+        
+        <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+          <button class="relative w-full py-2 font-semibold text-lg">
+              <span class="p-2 flex justify-start">1. How can I start learning English on this website?</span>
+              <span class="absolute top-2 text-3xl right-0">+</span>
+          </button>
+          <div class="hidden p-2 text-start text-[#62748E]">
+            <p>Start by exploring the vocabulary lessons and practicing with word cards.</p>
+          </div>
+        </div>
+
+       
+        <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+          <button class="relative w-full py-2 font-semibold text-lg">
+              <span class="p-2 flex justify-start">2. Is this website free to use?</span>
+              <span class="absolute top-2 text-3xl right-0">+</span>
+          </button>
+          <div class="hidden p-2 text-start text-[#62748E]">
+            <p>It depends on the website, some features may be free.</p>
+          </div>
+        </div>
+
+       
+        <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+          <button class="relative w-full py-2 font-semibold text-lg">
+              <span class="p-2 flex justify-start">3. Do I need to create an account?</span>
+              <span class="absolute top-2 text-3xl right-0">+</span>
+          </button>
+          <div class="hidden p-2 text-start text-[#62748E]">
+            <p>You need to create an account to access certain features.</p>
+          </div>
+        </div>
+
+      
+        <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+          <button class="relative w-full py-2 font-semibold text-lg">
+              <span class="p-2 flex justify-start">4. How can I build my English vocabulary?</span>
+              <span class="absolute top-2 text-3xl right-0">+</span>
+          </button>
+          <div class="hidden p-2 text-start text-[#62748E]">
+            <p>You can build your vocabulary by reading, using flashcards, and practicing new words daily.</p>
+          </div>
+        </div>
+
+        
+        <div class="bg-[#F8F8F8] px-5 w-full py-2 mb-2 rounded-md">
+          <button class="relative w-full py-2 font-semibold text-lg">
+              <span class="p-2 flex justify-start">5. Do you offer certificates for completed courses?</span>
+              <span class="absolute top-2 text-3xl right-0">+</span>
+          </button>
+          <div class="hidden p-2 text-start text-[#62748E]">
+            <p>It depends on the platform, some offer certificates for completed courses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -241,11 +191,38 @@
    
   
   </div>
-   
-  <!-- Toggle Button -->
-  <!-- <button id="toggleBtn" class="btn btn-primary mt-4 hidden" onclick="hideShow()">Hide</button> -->
 
-  <!-- JavaScript -->
+
+
+  <footer class="my-20 px-5 w-full flex md:flex-row justify-between border-t-2 border-gray-300 pt-5 items-center "> 
+    
+      
+      
+      <div class="text-center md:text-left">
+        <h2 class="flex items-center gap-2 font-semibold text-[20px]">
+          English <img src="./assets/logo.png" class="w-8 h-8" alt="Logo"> Janala
+        </h2>
+        <p class="font-semibold text-[20px] pt-3">ইংরেজি শিখুন সহজে</p>
+        <p class="font-normal text-[16px] pt-1">Providing ED-Tech Applications since 2025</p>
+      </div>
+  
+     
+      <div class="mt-5 md:mt-0 text-center">
+        <p class="font-normal text-[14px]">Follow us</p>
+        <div class="flex gap-3 pt-2 justify-center">
+          <a href="#"><img src="./assets/fb-thumb.png" class="w-6 h-6" alt="Facebook"></a>
+          <a href="#"><img src="./assets/instagram-thumb.png" class="w-6 h-6" alt="Instagram"></a>
+          <a href="#"><img src="./assets/youtube-thumb.png" class="w-6 h-6" alt="YouTube"></a>
+        </div>
+      </div>
+  
+    
+  </footer> 
+    
+
+
+  
+ 
 
  <script src="style.js"></script>
 
