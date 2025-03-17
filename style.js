@@ -217,7 +217,7 @@
      categoryDiv.innerHTML = `
              <button id="btn-${lesson.level_no}" 
                  onClick="loadCategoryLesson(${lesson.level_no})"
-                 class=" rounded-md pl-3 border-2 border-indigo-500/100 text-[#422AD5] hover:bg-[#422AD5] text-[18px] hover:text-white items-center flex"><i class="fa-solid fa-book-open"></i>
+                 class=" rounded-md pl-2 pr-2 border-2 border-indigo-500/100 text-[#422AD5] hover:bg-[#422AD5] text-[18px] hover:text-white items-center flex"><i class="fa-solid fa-book-open"></i>
                  ${lesson.lessonName}
              </button>`
          ;
